@@ -3,10 +3,6 @@
 #
 include config.mak
 
-ifndef SRC_PATH
-override SRC_PATH = .
-endif
-
 vpath %.c $(SRC_PATH)
 
 all:	version
@@ -15,11 +11,6 @@ all:	version
 ifneq ($(MP4BOX_STATIC),yes)
 	$(MAKE) -C modules all
 endif
-
-
-config.mak:
-	./configure
-
 
 GITREV_PATH:=$(SRC_PATH)/include/gpac/revision.h
 TAG:=$(shell git --git-dir=$(SRC_PATH)/.git describe --tags --abbrev=0 2> /dev/null)
