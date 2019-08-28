@@ -75,6 +75,8 @@ bld/
 .depend
 .deps/
 
+.idea/
+
 #GPAC specific 
 config.h
 include/gpac/revision.h
